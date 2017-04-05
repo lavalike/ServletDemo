@@ -40,8 +40,8 @@ public class UploadFile extends HttpServlet {
 		// 设置缓冲区目录
 		factory.setRepository(tempFilePath);
 		ServletFileUpload upload = new ServletFileUpload(factory);
-		// 设置最大文件4MB
-		upload.setSizeMax(1024 * 1024 * 4);
+		// 设置最大文件100MB
+		upload.setSizeMax(1024 * 1024 * 100);
 		try {
 			List<FileItem> items = upload.parseRequest(request);
 			Iterator<FileItem> iterator = items.iterator();
